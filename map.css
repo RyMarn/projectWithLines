@@ -265,5 +265,16 @@ footer {
     position:absolute;
     width:4px;
     margin-top:-1px;
-    background-color: rgba(255, 0, 0, 0.4);;
+    background-color: rgba(255, 0, 0, 0.2);;
   }
+
+
+  .year-line {
+    
+    background-color: rgba(24, 0, 255, 0.4);;
+  }
+
+  .blue{
+    color: rgba(24, 0, 255);
+    background-color: white;
+}

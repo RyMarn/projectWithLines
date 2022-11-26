@@ -16,7 +16,7 @@
     nodeList["comp2000"] = ["false","comp1020","math1300","math1700","stat2000","econ1020","comp1500" ];
     nodeList["math1240"] = ["false","comp1020","math1300","math1700","stat2000","econ1020" ,"comp1500"];
     nodeList["math2000"] = ["false","comp1020","math1300","math1700","stat2000","econ1020" ,"comp1500"];
-    nodeList["comp2150"] = ["false","comp2140" , "comp2160"];
+    nodeList["comp2150"] = ["false","comp2140"];
     nodeList["comp2280"] = ["false","comp2140" , "comp2160" , "math1240"];
     nodeList["comp2080"] = ["false","math1240" , "comp2140"];
     nodeList["comp2130"] = ["false","math1240" , "comp2140"];
@@ -457,10 +457,55 @@ function wait(ms){
     document.location.href = link
 
  }
+
+
+
+ var calledAlready= false; // For some reason adjustLineYear needs this...
  
+function adjustLineYear(from, to, line){
 
-
-
+    
+    
+    var fT = from.offsetTop  + from.offsetHeight/2;
+     var tT = to.offsetTop 	 + to.offsetHeight/2;
+     var fL = from.offsetLeft + from.offsetWidth/2;
+     var tL = to.offsetLeft 	 + to.offsetWidth/2;
+     
+     var CA   = Math.abs(tT - fT);
+     var CO   = Math.abs(tL - fL);
+     var H    = Math.sqrt(CA*CA + CO*CO);
+     var ANG  = 180 / Math.PI * Math.acos( CA/H );
+   
+     if(tT > fT){
+         var top  = (tT-fT)/2 + fT;
+     }else{
+         var top  = (fT-tT)/2 + tT;
+     }
+     if(tL > fL){
+         var left = (tL-fL)/2 + fL;
+     }else{
+         var left = (fL-tL)/2 + tL;
+     }
+   
+     if(( fT < tT && fL < tL) || ( tT < fT && tL < fL) || (fT > tT && fL > tL) || (tT > fT && tL > fL)){
+       ANG *= -1;
+     }
+     top-= H/2;
+   
+     line.style["-webkit-transform"] = 'rotate('+ ANG +'deg)';
+     line.style["-moz-transform"] = 'rotate('+ ANG +'deg)';
+     line.style["-ms-transform"] = 'rotate('+ ANG +'deg)';
+     line.style["-o-transform"] = 'rotate('+ ANG +'deg)';
+     line.style["-transform"] = 'rotate('+ ANG +'deg)';
+     var x = 0;
+     if ( !calledAlready)
+     {
+        x = 44;
+     }
+     line.style.top    = top + x +'px';
+     line.style.left   = left+'px';
+     line.style.height = H + 'px';
+   }
 
  function adjustLine(from, to, line){
  var fT = from.offsetTop  + from.offsetHeight/2;
@@ -494,7 +539,7 @@ function wait(ms){
   line.style["-ms-transform"] = 'rotate('+ ANG +'deg)';
   line.style["-o-transform"] = 'rotate('+ ANG +'deg)';
   line.style["-transform"] = 'rotate('+ ANG +'deg)';
-  line.style.top    = top + 10 +'px';
+  line.style.top    = top + 12 +'px';
   line.style.left   = left+'px';
   line.style.height = H + 'px';
 }
@@ -608,25 +653,64 @@ adjustLine(
     document.getElementById('line16')
   );
 
-  adjustLine(
-    document.getElementById('comp2140'), 
-    document.getElementById('comp2130'),
+  adjustLineYear(
+    document.getElementById('math1240'), 
+    document.getElementById('second-year'),
     document.getElementById('line17')
   );
-
-  adjustLine(
-    document.getElementById('math1240'), 
-    document.getElementById('math2080'),
-    document.getElementById('line15')
+  adjustLineYear(
+    document.getElementById('comp2000'), 
+    document.getElementById('second-year'),
+    document.getElementById('line18')
   );
+
+  adjustLineYear(
+    document.getElementById('math2000'), 
+    document.getElementById('second-year'),
+    document.getElementById('line19')
+  );
+
+  calledAlready = true;
+  /*
+
+  adjustLineYear(
+    document.getElementById('comp1020'), 
+    document.getElementById('second-year'),
+    document.getElementById('line20')
+  );
+  adjustLineYear(
+    document.getElementById('math1700'), 
+    document.getElementById('second-year'),
+    document.getElementById('line21')
+  );
+
+  adjustLineYear(
+    document.getElementById('comp1500'), 
+    document.getElementById('second-year'),
+    document.getElementById('line22')
+  );
+  adjustLineYear(
+    document.getElementById('econ1020'), 
+    document.getElementById('second-year'),
+    document.getElementById('line23')
+  );
+
+  */
+
+
 }
 
 
 $( window ).resize(function() {
+   
     drawLine();
 });
 
 drawLine();
+
+
+
+
 
 
 /*
