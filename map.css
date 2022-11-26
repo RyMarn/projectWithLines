@@ -25,6 +25,7 @@ body{
     margin: 0;
     background-color: var(--black);
 
+
 }
 
 
@@ -277,4 +278,29 @@ footer {
   .blue{
     color: rgba(24, 0, 255);
     background-color: white;
+}
+
+
+
+
+#map-lines
+{
+    cursor: pointer;
+    background: var(--green);
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 224px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all ease 0.30s;
+    text-align:center;
+    
+}
+
+#map-lines:hover
+{
+    background-color: var(--green-dark);
+   
 }

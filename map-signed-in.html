@@ -57,13 +57,22 @@ Major students are eligible for the co-op program and specialization areas.To en
 
         </p>
         <hr>
-
+        <div id="map-lines">
+            <input type="checkbox" id="map-lines-check" onchange="toggleLines()">
+             Turn on Map Lines</div>
         <p class="how-to-use">
             <span class="green">CHECK</span> each completed course to know what courses after you can take!<br>
             <span class="green">DOUBLE CLICK</span> on each course to know more information about it! <br>
-            <span class="blue">BLUE LINES</span> Means all previous years courses required
-
+        
+                <span  id="line-info">
+                <span class="blue" >BLUE LINES</span> 
+                Means all previous years courses required
+            </span>
+           
+       
         </p>
+        
+
         <h1 class="years-text" id="first-year">First Year</h1>
         <div class="years">
             <div class="node" id="comp1010" ondblclick="moveDivs(event) ; changeCourseInfo('COMP 1010') ">

@@ -460,12 +460,11 @@ function wait(ms){
 
 
 
- var calledAlready= false; // For some reason adjustLineYear needs this...
- 
-function adjustLineYear(from, to, line){
 
-    
-    
+
+
+ //THIS FUNCTION DRAW LINES FROM A COURSE NODE TO A YEAR DIV 
+function adjustLineYear(from, to, line){
     var fT = from.offsetTop  + from.offsetHeight/2;
      var tT = to.offsetTop 	 + to.offsetHeight/2;
      var fL = from.offsetLeft + from.offsetWidth/2;
@@ -497,12 +496,9 @@ function adjustLineYear(from, to, line){
      line.style["-ms-transform"] = 'rotate('+ ANG +'deg)';
      line.style["-o-transform"] = 'rotate('+ ANG +'deg)';
      line.style["-transform"] = 'rotate('+ ANG +'deg)';
-     var x = 0;
-     if ( !calledAlready)
-     {
-        x = 44;
-     }
-     line.style.top    = top + x +'px';
+    
+    
+     line.style.top    = top +'px';
      line.style.left   = left+'px';
      line.style.height = H + 'px';
    }
@@ -544,7 +540,7 @@ function adjustLineYear(from, to, line){
   line.style.height = H + 'px';
 }
 
-
+//THIS FUNCTION DRAWS ALL OF THE LINES
 function drawLine()
 {
 adjustLine(
@@ -669,82 +665,48 @@ adjustLine(
     document.getElementById('second-year'),
     document.getElementById('line19')
   );
-
-  calledAlready = true;
-  /*
-
-  adjustLineYear(
-    document.getElementById('comp1020'), 
-    document.getElementById('second-year'),
-    document.getElementById('line20')
-  );
-  adjustLineYear(
-    document.getElementById('math1700'), 
-    document.getElementById('second-year'),
-    document.getElementById('line21')
-  );
-
-  adjustLineYear(
-    document.getElementById('comp1500'), 
-    document.getElementById('second-year'),
-    document.getElementById('line22')
-  );
-  adjustLineYear(
-    document.getElementById('econ1020'), 
-    document.getElementById('second-year'),
-    document.getElementById('line23')
-  );
-
-  */
+ 
 
 
 }
 
 
+//THIS VARIABLE KEEP TRACK OF IF THE LINES ARE ON OR OFF
+var linesOn = false;
+$("#line-info").hide();
+
+
+// this monitors the line button, if it has been chcked
+function toggleLines()
+{
+
+    if ( !linesOn)
+    {
+   $(".line").show();
+   $("#line-info").show();
+
+    drawLine();
+    linesOn = true;
+    }
+    else {
+        // Makes the lines invisable 
+        linesOn = false;
+        $(".line").hide();
+        $("#line-info").hide();
+
+    }
+};
+
+// IF THE WINDOW RESIZES WE NEED TO REDRAW THE LINES
 $( window ).resize(function() {
    
+    if ( linesOn) // ONLY REDRAW THE LINES IF THE FEATURE IS TURNED ON
+    {
     drawLine();
+    }
 });
 
-drawLine();
 
 
 
-
-
-
-/*
-  adjustLine(
-    document.getElementById('comp1020'), 
-    document.getElementById('math1240'),
-    document.getElementById('line10')
-  );
-
-  adjustLine(
-    document.getElementById('math1700'), 
-    document.getElementById('math1240'),
-    document.getElementById('line11')
-  );
-
-  adjustLine(
-    document.getElementById('comp1500'), 
-    document.getElementById('math1240'),
-    document.getElementById('line12')
-  );
-
-
-
-  adjustLine(
-    document.getElementById('econ1020'), 
-    document.getElementById('math1240'),
-    document.getElementById('line13')
-  );
-
-  
-  adjustLine(
-    document.getElementById('stat2000'), 
-    document.getElementById('math1240'),
-    document.getElementById('line13')
-  );
-
-  */
+ 
