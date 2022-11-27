@@ -113,27 +113,25 @@ turnGreen();
     {
    
    
-
+    // Change to false;
     if ( nodeList[parentID][0] == "false")
     {
-    
         nodeList[parentID][0] = "true";
         this.parentElement.style.backgroundColor = clickedBox;
+        turnGreen();  
         
      }
 
       else { 
         nodeList[parentID][0] = "false";
         this.parentElement.style.backgroundColor = "#33554a";
+        turnGreen();  
       }
     }
     else {
-        $(this).prop('checked', !$(this).prop('checked')); // Prevent this from being check
+        $(this).prop('checked', !$(this).prop('checked')); // Prevent this from being checked
 
     }
-
-    turnGreen();
-    
       
  })
 
@@ -144,7 +142,7 @@ turnGreen();
     {
 
         targetNode =  nodeList[nodeID][i] ;
-        if (nodeList[targetNode][0] == "false")
+        if (nodeList[targetNode][0] == "false"  || !checkReq(targetNode) )
         {
             return false;
         }
@@ -154,18 +152,19 @@ turnGreen();
 
   function turnGreen()
   {
- 
+
     Object.keys(nodeList).forEach(function(x)
     {
-        $("#" + x).css("border", "none");// remove border
-        if (nodeList[x][0] == "false" && checkReq(x )  )
+        if (nodeList[x][0] == "false"  && checkReq(x )  ) // It's not clicked, and it's requirments are met
         {
-            $("#" + x).css("background-color", "#00DF9A ");// Prevent this from being check
+            $("#" + x).css("background-color", "#00DF9A ");// show this as clickable
        
         }
-        if ( !checkReq(x )) 
+        if ( !checkReq(x)) 
         {
+
             $(`#${x} :first-child`).prop('checked', false); // Uncheck the box
+            nodeList[x][0] = "false";
             $("#" + x).css("background-color" , "#33554a");// Prevent this from being check
         }
     })
@@ -200,7 +199,7 @@ turnGreen();
 
 
 var courseDesc = [];
-courseDesc["sample"] = "This is a default example of description for a course! In the real world more information would go here"
+courseDesc["sample"] = "This is a default example of a description for a course! In the real world more information would go here"
 + " <br> <input type='radio' name='timeOption' id='time-option1' value='0'> MWF - AM PM *Generic time "
 
 
@@ -295,8 +294,6 @@ function moveDivs(event)
 
     
         currentCourseSelected = target.id;
-
-
         var screenWidth = $(window).width();
      
         x=event.pageX;
@@ -761,6 +758,15 @@ adjustLine(
     document.getElementById('second-year'),
     document.getElementById('line19')
   );
+
+
+  
+  adjustLine(
+    document.getElementById('comp1020'), 
+    document.getElementById('comp2140'),
+    document.getElementById('line20')
+  );
+
  
 
 
