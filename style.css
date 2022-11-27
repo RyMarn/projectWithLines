@@ -103,7 +103,11 @@ transition: all ease 0.30s;
 
 .main-page{
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+
 
 .high-school-msg{
     width: 100%;
