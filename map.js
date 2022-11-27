@@ -172,54 +172,95 @@ turnGreen();
 }
 
 
+//WedThurs  11:30 AM - 12:30 PM  1
+//MWF 10:30 AM - 11:20 AM  2
+//MWF 2:30 PM - 3:20 PM 3
 
+//MWF 9:30 AM - 10:20 AM 4
+// MWF 8:30 AM - 9:20 AM 5
+
+//WTrs  8:30 AM - 9:30 AM  6
+//WTrs  10:30 AM - 12:20 A  7
+
+
+//MWF 11:30 AM - 12:20 PM  8
+//MWF  12:20 PM - 1 :30PM  9
+
+//MWF 1:30 PM - 2:20 PM  10
+//MWF  3:30 PM - 4 :20PM  11
+
+//WTrs  12:20 PM - 1:30 PM 12
+//WTrs  1:30 PM - 2:20 PM  13
+//WTrs  9:30 AM - 10:20 AM  14
+
+//WTrs  2:30 PM - 3:20 PM   15
 
 
 
 
 
 var courseDesc = [];
-courseDesc["sample"] = "This is default example of description for a course! In the real world more information would go here"
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 10:30 AM - 11:20 AM" 
+courseDesc["sample"] = "This is a default example of description for a course! In the real world more information would go here"
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='0'> MWF - AM PM *Generic time "
+
 
 courseDesc["comp1010"] = "An introduction to computer science. Students will learn the basics of computer science and programming using a procedural high level language "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br> TRW 11:30 AM - 12:30 PM "
-+ "<br> MWF 10:30 AM - 11:20 AM"
-+"<br> MWF 2:30 PM - 3:20 PM</p> " ;
++ "  <p style='text-decoration: underline ;'>Fall 2022:" 
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
++"<br> <input type='radio' name='timeOption' id='time-option3' value='3'> MWF 2:30 PM - 3:20 PM</p> " ;
 
 
 courseDesc["math1500"] = "A first Year calculus class. Teaches about derivatives, changing functions, riemann sums and slopes "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 10:30 AM - 11:20 AM<br> MWF 12:30 PM - 1:20 PM</p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='4'>MWF 9:30 AM - 10:20 AM"
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='5'> MWF 8:30 AM - 9:20 AM</p> " 
 
 courseDesc["math1300"] = "Learn about linear algebra. Includes topics on matrixes, linear functions and transformations "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 1:30 PM - 2:20 PM   <br> TR 11:30 AM - 1:00 PM  </p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM"
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='4'>MWF 9:30 AM - 10:20 AM"
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='7'> WTr  10:30 AM - 12:20 AM </p>"
 
 courseDesc["comp1020"] = "Introduction to recursive functions, Object oriented programing and some basic algorithms "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br> TW 10:30 AM - 11:20 AM</p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='8'>MWF 11:30 AM - 12:20 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='9'> 12:20 PM - 1 :30PM </p>"
+
 
 courseDesc["econ1010"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 10:30 AM - 11:20 AM</p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='10'>MWF 1:30 PM - 2:20 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
 
 courseDesc["econ1020"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ "  <p style='text-decoration: underline ;'>Fall 2022:<br> MWF 9:30 AM - 11:20 AM <br> TR 8:30 AM - 11:50 AM</p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
 
 
 courseDesc["stat1000"] = "Learn the basics of modern statistics using the R-programing language. Includes topics like normal distribution and p-values"
-+ "  <p style='text-decoration: underline ;'>Fall 2022:<br> MWF 10:30 AM - 11:20 AM <br> MWF 9:30 AM - 10:20 AM </p> ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='14'> WTr  9:30 AM - 10:20 AM </p>"
+
 
 courseDesc["math1700"] = "A second Year calculus class. Teaches about integrals, calcuting volumes, power rule and accumlation functions "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 10:30 AM - 11:20 AM <br> TR 4:00 PM - 5:15 PM</p>  ";
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
+
 
 
 courseDesc["comp1500"] = "A computer class designed for engineering students. Uses python to teach object oriented topics in computer scince"
-+ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 8:30 AM - 9:20 AM</p> ";
-
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
++"<br> <input type='radio' name='timeOption' id='time-option3' value='15'> WTr  2:30 PM - 3:20 PM  </p> " ;
 
 
 courseDesc["stat2000"] = "More advanced topics in statistics are covered in the course. Geared towards students pursuing more mathematically rich careers."
-+ "  <p style='text-decoration: underline ;' <br>Fall 2022: <br> MWF 10:30 AM - 11:20 AM  <br> MWF 11:30 AM - 12:20 PM</p> ";
-
-
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='9'> 12:20 PM - 1 :30PM </p>"
 
 
 
@@ -296,7 +337,7 @@ function moveDivs(event)
     }
 
 
-    //THIS CHANGES WHETHER THE BUTTON SAYS ADD TO OR REMOVE FROM SCHEDULE
+    //THIS CHANGES WHETHER THE BUTTON SAYS ADD TO ADD OR REMOVE FROM SCHEDULE
     function changeCourseInfo(text)
     {
         var courseTxt = document.getElementById("course-info-txt");
@@ -349,21 +390,27 @@ function changeBtnText(element)
     {
     changeText(x,"Remove From Schedule");
     }
+    }
     else {
-        alert("Schedule is full! Maximum of 5 courses allowed, remove courses before adding more ")
-    }
-   
-    }
-    else
-    {
-    changeText(x,"Add To Schedule");
-    localStorage.setItem("course1", "")
-    }
-
-
     
-}
+      removeFromSchedule(courseTarget);
+      changeText(x,"Add To Schedule");
+    }
+  }
 
+function removeFromSchedule( inputCourse)
+{
+
+  for ( var i = 1 ; i < 6; i++)
+  {
+      var target = "course" + i;
+   
+      if ( localStorage[target] == inputCourse)
+      {
+        localStorage[target] = "";
+      }
+  }
+}   
 
 
 
@@ -387,35 +434,79 @@ function checkIfCourseInSchedule( inputCourse)
 
 
  var courseTimes = [];
-  courseTimes["COMP 1010"] = ["MWF", 9301020];
-  courseTimes["math 1010"] = ["MWF", 9301020];
+courseTimes["COMP 1010"] = [1,2,3];
+courseTimes["math 1010"] = ["MWF", 9301020];
 
 
 //ADD TO SCHDULE - Returns true if added, else returns false
 function addToSchedule(inputCourse)
 {
+
+  $("#clean-away").remove();
+
+  var time_option ;
+  if (document.getElementById('time-option1').checked)
+  {
+    time_option = document.getElementById('time-option1').value;
+  }
+  else if (document.getElementById('time-option2').checked)
+  {
+    time_option = document.getElementById('time-option2').value;
+  }
+
+  else if (document.getElementById('time-option3').checked)
+  {
+    time_option = document.getElementById('time-option3').value;
+  }
+  else {
+      $("#course-info p").last().after("<p id='clean-away' style='color: red;' > *You must Select a time</p>");
+      return false;
+  }
   
+
+  // CHECK FOR OVERLAPPING TIMES  
+  for ( var i = 1 ; i < 7; i++)
+  {
+     
+      var target = "course" + i;
+   
+      if ( time_option != 0 && localStorage[target] != "" &&  localStorage[target] != null )
+      {
+
+        target += "_time";
+        if ( localStorage[target] == time_option )
+        {
+          //alert("That time spot has already been taken by another course!");
+
+          $("#course-info p").last().after("<p id='clean-away' style='color: red;' > *That time spot has already been taken by another course!</p>");
+          return false;
+        }
+
+          
+      }
+  }
 
 
     for ( var i = 1 ; i < 7; i++)
 {
+   
     var target = "course" + i;
  
     if ( localStorage[target] == "" ||  localStorage[target] == null )
     {
         localStorage.setItem(target, inputCourse);
+
+        target += "_time";
+        localStorage.setItem(target, time_option);
+
         return true;
     }
     }
+    $("#course-info p").last().after("<p id='clean-away' style='color: red;' > *Schedule is full! Maximum of 5 courses allowed. <br> Remove courses before adding more!</p>");
+
+    //alert("Schedule is full! Maximum of 5 courses allowed, remove courses before adding more ")
     return false;
 }
-
-
-
-
-
-
-
 
 
 function changeText(element , text)

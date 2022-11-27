@@ -261,6 +261,8 @@ footer {
 
 
 
+
+
 .line{
     z-index: -1;
     position:absolute;
@@ -304,4 +306,10 @@ footer {
 {
     background-color: var(--green-dark);
    
+}
+
+
+#info-for-user
+{
+    
 }
