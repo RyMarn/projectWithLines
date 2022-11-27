@@ -205,59 +205,59 @@ courseDesc["sample"] = "This is a default example of a description for a course!
 
 courseDesc["comp1010"] = "An introduction to computer science. Students will learn the basics of computer science and programming using a procedural high level language "
 + "  <p style='text-decoration: underline ;'>Fall 2022:" 
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> TueTr  11:30 AM - 12:30 PM "
 + "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
 +"<br> <input type='radio' name='timeOption' id='time-option3' value='3'> MWF 2:30 PM - 3:20 PM</p> " ;
 
 
 courseDesc["math1500"] = "A first Year calculus class. Teaches about derivatives, changing functions, riemann sums and slopes "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> TueTr  11:30 AM - 12:30 PM "
 + " <br> <input type='radio' name='timeOption' id='time-option2'  value='4'>MWF 9:30 AM - 10:20 AM"
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='5'> MWF 8:30 AM - 9:20 AM</p> " 
 
 courseDesc["math1300"] = "Learn about linear algebra. Includes topics on matrixes, linear functions and transformations "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM"
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> TueTr  8:30 AM - 10:30 AM"
 + " <br> <input type='radio' name='timeOption' id='time-option2'  value='4'>MWF 9:30 AM - 10:20 AM"
-+ " <br> <input type='radio' name='timeOption' id='time-option3' value='7'> WTr  10:30 AM - 12:20 AM </p>"
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='7'> TueTr  10:30 AM - 12:20 AM </p>"
 
 courseDesc["comp1020"] = "Introduction to recursive functions, Object oriented programing and some basic algorithms "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> TueTr  8:30 AM - 10:30 AM "
 + " <br> <input type='radio' name='timeOption' id='time-option2'  value='8'>MWF 11:30 AM - 12:20 PM "
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='9'> 12:20 PM - 1 :30PM </p>"
 
 
 courseDesc["econ1010"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> WTr  8:30 AM - 10:30 AM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='6'> TueTr  8:30 AM - 10:30 AM "
 + " <br> <input type='radio' name='timeOption' id='time-option2'  value='10'>MWF 1:30 PM - 2:20 PM "
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
 
 courseDesc["econ1020"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
-+ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> TueTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>TueTr  1:30 PM - 2:20 PM  "
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
 
 
 courseDesc["stat1000"] = "Learn the basics of modern statistics using the R-programing language. Includes topics like normal distribution and p-values"
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
-+ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
-+ " <br> <input type='radio' name='timeOption' id='time-option3' value='14'> WTr  9:30 AM - 10:20 AM </p>"
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> TueTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>TueTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option3' value='14'> TueTr  9:30 AM - 10:20 AM </p>"
 
 
 courseDesc["math1700"] = "A second Year calculus class. Teaches about integrals, calcuting volumes, power rule and accumlation functions "
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> WTr  12:20 PM - 1:30  "
-+ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>WTr  1:30 PM - 2:20 PM  "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='12'> TueTr  12:20 PM - 1:30  "
++ " <br> <input type='radio' name='timeOption' id='time-option2'  value='13'>TueTr  1:30 PM - 2:20 PM  "
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='11'> MWF  3:30 PM - 4:20PM</p>"
 
 
 
 courseDesc["comp1500"] = "A computer class designed for engineering students. Uses python to teach object oriented topics in computer scince"
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> TueTr  11:30 AM - 12:30 PM "
 + "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
-+"<br> <input type='radio' name='timeOption' id='time-option3' value='15'> WTr  2:30 PM - 3:20 PM  </p> " ;
++"<br> <input type='radio' name='timeOption' id='time-option3' value='15'> TueTr  2:30 PM - 3:20 PM  </p> " ;
 
 
 courseDesc["stat2000"] = "More advanced topics in statistics are covered in the course. Geared towards students pursuing more mathematically rich careers."
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> WTr  11:30 AM - 12:30 PM "
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='1'> TueTr  11:30 AM - 12:30 PM "
 + "<br>   <input type='radio' name='timeOption' id='time-option2'  value='2'>MWF 10:30 AM - 11:20 AM"
 + " <br> <input type='radio' name='timeOption' id='time-option3' value='9'> 12:20 PM - 1 :30PM </p>"
 
