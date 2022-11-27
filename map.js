@@ -96,13 +96,11 @@
 
 
 
+    //Variables for a when a box is clicked
     var borderWidth = "4px";
-
     var clickedBox = "#00DF9A";
 
 
-
-    
 turnGreen();
 
   $('input[type="checkbox"]').click(function(e) 
@@ -140,7 +138,6 @@ turnGreen();
  })
 
 
-
  function checkReq(nodeID) {
     
     for (  var i = 1 ; i < nodeList[nodeID].length; i++   )
@@ -153,9 +150,7 @@ turnGreen();
         }
     }
     return true;
-
   }
-
 
   function turnGreen()
   {
@@ -163,25 +158,16 @@ turnGreen();
     Object.keys(nodeList).forEach(function(x)
     {
         $("#" + x).css("border", "none");// remove border
-
-
-
-      
         if (nodeList[x][0] == "false" && checkReq(x )  )
         {
             $("#" + x).css("background-color", "#00DF9A ");// Prevent this from being check
        
         }
-
         if ( !checkReq(x )) 
         {
             $(`#${x} :first-child`).prop('checked', false); // Uncheck the box
             $("#" + x).css("background-color" , "#33554a");// Prevent this from being check
-       
-
         }
-
-
     })
 }
 
@@ -194,41 +180,44 @@ turnGreen();
 
 var courseDesc = [];
 courseDesc["sample"] = "This is default example of description for a course! In the real world more information would go here"
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 10:30 AM - 11:20 AM" 
 
 courseDesc["comp1010"] = "An introduction to computer science. Students will learn the basics of computer science and programming using a procedural high level language "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br> TRW 11:30 AM - 12:30 PM "
++ "<br> MWF 10:30 AM - 11:20 AM"
++"<br> MWF 2:30 PM - 3:20 PM</p> " ;
+
 
 courseDesc["math1500"] = "A first Year calculus class. Teaches about derivatives, changing functions, riemann sums and slopes "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 10:30 AM - 11:20 AM<br> MWF 12:30 PM - 1:20 PM</p> ";
 
 courseDesc["math1300"] = "Learn about linear algebra. Includes topics on matrixes, linear functions and transformations "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br>MWF 1:30 PM - 2:20 PM   <br> TR 11:30 AM - 1:00 PM  </p> ";
 
 courseDesc["comp1020"] = "Introduction to recursive functions, Object oriented programing and some basic algorithms "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br> TW 10:30 AM - 11:20 AM</p> ";
 
 courseDesc["econ1010"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 10:30 AM - 11:20 AM</p> ";
 
 courseDesc["econ1020"] = "This is a sample elective course, that the student could pick from a drop down menu. Learn basic Econmics, including demand and supply curves! "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022:<br> MWF 9:30 AM - 11:20 AM <br> TR 8:30 AM - 11:50 AM</p> ";
 
 
 courseDesc["stat1000"] = "Learn the basics of modern statistics using the R-programing language. Includes topics like normal distribution and p-values"
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022:<br> MWF 10:30 AM - 11:20 AM <br> MWF 9:30 AM - 10:20 AM </p> ";
 
 courseDesc["math1700"] = "A second Year calculus class. Teaches about integrals, calcuting volumes, power rule and accumlation functions "
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 10:30 AM - 11:20 AM <br> TR 4:00 PM - 5:15 PM</p>  ";
 
 
 courseDesc["comp1500"] = "A computer class designed for engineering students. Uses python to teach object oriented topics in computer scince"
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;'>Fall 2022: <br> MWF 8:30 AM - 9:20 AM</p> ";
 
 
 
 courseDesc["stat2000"] = "More advanced topics in statistics are covered in the course. Geared towards students pursuing more mathematically rich careers."
-+ "  <p style='text-decoration: underline ;'>Fall 2022: MWF 10:30 AM - 11:20 AM</p> ";
++ "  <p style='text-decoration: underline ;' <br>Fall 2022: <br> MWF 10:30 AM - 11:20 AM  <br> MWF 11:30 AM - 12:20 PM</p> ";
 
 
 
@@ -238,6 +227,7 @@ courseDesc["stat2000"] = "More advanced topics in statistics are covered in the 
 // EVERYTHING RELATD TO THE HIDDEN DIVS
 
 var currentCourseSelected;
+
 
 
 //THE FUNCTION THAT RUNS WHEN YOU DOUBLE CLICK THE NODE
@@ -370,7 +360,13 @@ function changeBtnText(element)
     localStorage.setItem("course1", "")
     }
 
+
+    
 }
+
+
+
+
 
 
 // cHECK IF IF THE INPUT COURSE IS IN THE SCHEDULE;
@@ -388,10 +384,20 @@ function checkIfCourseInSchedule( inputCourse)
     return false;
 }
 
+
+
+ var courseTimes = [];
+  courseTimes["COMP 1010"] = ["MWF", 9301020];
+  courseTimes["math 1010"] = ["MWF", 9301020];
+
+
 //ADD TO SCHDULE - Returns true if added, else returns false
 function addToSchedule(inputCourse)
 {
-for ( var i = 1 ; i < 7; i++)
+  
+
+
+    for ( var i = 1 ; i < 7; i++)
 {
     var target = "course" + i;
  
@@ -400,8 +406,7 @@ for ( var i = 1 ; i < 7; i++)
         localStorage.setItem(target, inputCourse);
         return true;
     }
-}
-
+    }
     return false;
 }
 
