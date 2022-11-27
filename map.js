@@ -170,6 +170,25 @@ turnGreen();
     })
 }
 
+var time_codes = [];
+time_codes[0] = "Generic Time for Schedule"
+time_codes[1] = "WedThurs  11:30 AM - 12:30 PM";
+time_codes[2] = "MWF 10:30 AM - 11:20 AM ";
+time_codes[3] = "MWF 2:30 PM - 3:20 PM";
+time_codes[4] = "MWF 9:30 AM - 10:20 AM";
+time_codes[5] =  "MWF 8:30 AM - 9:20 AM";
+time_codes[6] = "TueTr  8:30 AM - 9:30 AM ";
+time_codes[7] = "TueTr  10:30 AM - 12:20AM ";
+
+time_codes[8] = "MWF 11:30 AM - 12:20 PM ";
+time_codes[9] = "MWF  12:20 PM - 1 :30PM ";
+time_codes[10] = "MWF 1:30 PM - 2:20 PM ";
+time_codes[11] = "MWF  3:30 PM - 4 :20PM";
+time_codes[12] = "TueTr  12:20 PM - 1:30 PM";
+time_codes[13] = "TueTr  1:30 PM - 2:20 PM";
+time_codes[14] = "TueTr  9:30 AM - 10:20 AM";
+time_codes[15] = "TueTr  2:30 PM - 3:20 PM ";
+
 
 //WedThurs  11:30 AM - 12:30 PM  1
 //MWF 10:30 AM - 11:20 AM  2
@@ -178,9 +197,8 @@ turnGreen();
 //MWF 9:30 AM - 10:20 AM 4
 // MWF 8:30 AM - 9:20 AM 5
 
-//WTrs  8:30 AM - 9:30 AM  6
-//WTrs  10:30 AM - 12:20 A  7
-
+//TueTr  8:30 AM - 9:30 AM  6
+//TueTr  10:30 AM - 12:20AM  7
 
 //MWF 11:30 AM - 12:20 PM  8
 //MWF  12:20 PM - 1 :30PM  9
@@ -188,11 +206,11 @@ turnGreen();
 //MWF 1:30 PM - 2:20 PM  10
 //MWF  3:30 PM - 4 :20PM  11
 
-//WTrs  12:20 PM - 1:30 PM 12
-//WTrs  1:30 PM - 2:20 PM  13
-//WTrs  9:30 AM - 10:20 AM  14
+//TueTr  12:20 PM - 1:30 PM 12
+//TueTr  1:30 PM - 2:20 PM  13
+//TueTr  9:30 AM - 10:20 AM  14
 
-//WTrs  2:30 PM - 3:20 PM   15
+//TueTr  2:30 PM - 3:20 PM   15
 
 
 
@@ -787,11 +805,13 @@ function toggleLines()
    $(".line").show();
    $("#line-info").show();
 
+    $("#map-lines-check").prop("checked", true);
     drawLine();
     linesOn = true;
     }
     else {
         // Makes the lines invisable 
+        $("#map-lines-check").prop("checked", false);
         linesOn = false;
         $(".line").hide();
         $("#line-info").hide();
@@ -808,6 +828,37 @@ $( window ).resize(function() {
     }
 });
 
+
+function seeCourses() {
+  
+  $(".dropdown-content").empty();
+ // CHECK FOR OVERLAPPING TIMES  
+ var coursesInSchedule = false;
+ for ( var i = 1 ; i < 7; i++)
+ {
+    
+
+     var target = "course" + i;
+     
+
+     if ( localStorage[target] != ""  &&  localStorage[target] != null )
+     {
+     
+      coursesInSchedule = true;
+       $(".dropdown-content").append("<p> <span style='text-decoration: underline'>" +  localStorage[target]  + " </span>:<br> " + time_codes[localStorage[target + "_time"]]  + "</p>");       
+
+         
+     }
+ }
+
+ if (!coursesInSchedule)
+ {
+  $(".dropdown-content").append("<p> No Courses have been Added to your Schedule!</p>");       
+
+ }
+
+
+}
 
 
 

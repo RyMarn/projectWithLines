@@ -309,7 +309,42 @@ footer {
 }
 
 
-#info-for-user
-{
+.dropdown {
+    position: absolute;
+     cursor: pointer;
+    background: var(--green);
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 224px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all ease 0.30s;
+    text-align:center;
+    z-index: 12333322;
     
-}
+  }
+  
+  .dropdown-content {
+    display: none;
+    font-size: .7em;
+    margin-top: 4px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+ 
+    z-index: 12333322;
+  }
+
+  .dropdown:hover {
+     
+    background-color: var(--green-dark);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 12333322;
+  }
+  
+   
