@@ -217,9 +217,15 @@ time_codes[15] = "TueTr  2:30 PM - 3:20 PM ";
 
 
 var courseDesc = [];
+/*
 courseDesc["sample"] = "This is a default example of a description for a course! In the real world more information would go here"
-+ " <br> <input type='radio' name='timeOption' id='time-option1' value='0'> MWF - AM PM *Generic time "
-
++ " <br> <input type='radio' name='timeOption' id='time-option1' value='0'> MWF - AM PM *Generic time <p>"
+*/
+courseDesc["sample"] = "This is a default example of a description for a course! In the real world more information would go here"
++ "  <p style='text-decoration: underline ;'>Fall 2022:" 
++ "<br><input type='radio' name='timeOption' id='time-option1' value='0'> MWF - AM PM *Generic time "
++ "<br><input type='radio' name='timeOption' id='time-option2'  value='0'> TuesTr - AM PM *Generic time"
++"<br><input type='radio' name='timeOption' id='time-option3' value='0'> MF - AM PM *Generic time</p> " ;
 
 courseDesc["comp1010"] = "An introduction to computer science. Students will learn the basics of computer science and programming using a procedural high level language "
 + "  <p style='text-decoration: underline ;'>Fall 2022:" 
@@ -457,6 +463,7 @@ courseTimes["math 1010"] = ["MWF", 9301020];
 function addToSchedule(inputCourse)
 {
 
+ 
   $("#clean-away").remove();
 
   var time_option ;
@@ -477,6 +484,8 @@ function addToSchedule(inputCourse)
       $("#course-info p").last().after("<p id='clean-away' style='color: red; font-size: 15px' > *You must Select a time</p>");
       return false;
   }
+
+
   
 
   // CHECK FOR OVERLAPPING TIMES  
